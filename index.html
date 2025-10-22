@@ -13,40 +13,40 @@
             align-items: center;
             font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
-            padding: 20px; 
-            background-color: white; 
+            padding: 20px;
+            background-color: white;
             min-height: 100vh;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
         .page-section {
             width: 100%;
-            max-width: 1000px; 
+            max-width: 1000px;
             padding: 30px;
             box-sizing: border-box;
             text-align: center;
-            background-color: white; 
-            border-radius: 0; 
-            box-shadow: none; 
-            margin-bottom: 30px; 
+            background-color: white;
+            border-radius: 0;
+            box-shadow: none;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         h1 {
-            color: black; 
+            color: black;
             font-weight: 700;
             margin-bottom: 25px;
             font-size: 2.2em;
         }
-        
+
         #intro-page {
-            justify-content: center; 
+            justify-content: center;
         }
 
         #intro-page h1 {
-            font-size: 2.5em; 
+            font-size: 2.5em;
         }
         #intro-page p {
             font-size: 1.1em;
@@ -55,61 +55,60 @@
         }
         #intro-page .intro-notice {
             margin-top: 30px;
-            font-weight: 300; 
-            color: #888; 
+            font-weight: 300;
+            color: #888;
             font-size: 0.9em;
         }
 
 
         #analysis-page {
-            display: none; 
+            display: none;
             text-align: left;
-            position: relative; 
-            align-items: flex-start; 
+            position: relative;
+            align-items: flex-start;
         }
 
         #start-button {
-            padding: 20px 60px; 
-            font-size: 1.5em; 
-            background-color: transparent; 
-            color: black; 
-            border: 2px solid black; 
-            border-radius: 0; 
+            padding: 20px 60px;
+            font-size: 1.5em;
+            background-color: transparent;
+            color: black;
+            border: 2px solid black;
+            border-radius: 0;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s, color 0.3s;
-            box-shadow: none; 
+            box-shadow: none;
             margin-top: 30px;
         }
 
         #start-button:hover {
-            background-color: #333; 
-            color: white; 
+            background-color: #333;
+            color: white;
             transform: translateY(-2px);
         }
-        
+
         #analysis-header {
-            width: 100%; 
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0; 
-            margin-bottom: 20px; 
+            padding: 0;
+            margin-bottom: 20px;
         }
         #analysis-header h1 {
             margin: 0;
-            color: black; 
-            font-size: 1.5em; 
+            color: black;
+            font-size: 1.5em;
         }
 
-        #gallery-button { 
+        #gallery-button {
             width: 40px;
             height: 40px;
             background-color: #ccc;
             border: none;
-            border-radius: 50%; 
+            border-radius: 50%;
             cursor: pointer;
-            box-shadow: none; 
-            color: transparent; 
+            box-shadow: none;
+            color: transparent;
             font-weight: bold;
             font-size: 0.8em;
             display: flex;
@@ -126,37 +125,37 @@
             width: 100%;
             text-align: left;
             margin-bottom: 20px;
-            font-size: 0.9em; 
-            color: #888; 
+            font-size: 0.9em;
+            color: #888;
         }
 
         #main-analysis-grid {
-            width: 100%; 
+            width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1.2fr; 
-            gap: 50px; 
-            align-items: start; 
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
         }
 
         #left-panel {
             display: flex;
             flex-direction: column;
-            gap: 10px; 
-            align-items: flex-start; 
+            gap: 10px;
+            align-items: flex-start;
         }
-        
+
         .content-wrapper {
-            width: 75%; 
-            max-width: 350px; 
+            width: 75%;
+            max-width: 350px;
         }
 
 
         #webcam-container {
             width: 100%;
-            aspect-ratio: 4 / 3; 
+            aspect-ratio: 4 / 3;
             border: 1px solid #ddd;
             border-radius: 0;
-            box-shadow: none; 
+            box-shadow: none;
             overflow: hidden;
             position: relative;
         }
@@ -164,74 +163,115 @@
             width: 100%;
             height: 100%;
             display: block;
-            transform: scaleX(-1); 
+            transform: scaleX(-1);
             object-fit: cover;
         }
-        
+        /* Particle canvas styling */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Make canvas click-through */
+        }
+
         #color-info-box {
             background-color: white;
             padding: 15px;
-            border: 1px solid #333; 
+            border: 1px solid #333;
             border-radius: 0;
             text-align: left;
-            box-shadow: none; 
-            width: 100%; 
+            box-shadow: none;
+            width: 100%;
             box-sizing: border-box;
         }
         #extracted-color-display {
             width: 100%;
-            height: 30px; 
+            height: 30px;
             margin-bottom: 10px;
             border: 1px solid #eee;
             border-radius: 0;
-            box-shadow: none; 
-            background-color: #f0f0f0; 
+            box-shadow: none;
+            background-color: #f0f0f0;
         }
         #color-code-text {
             font-weight: bold;
-            color: black; 
+            color: black;
             margin-bottom: 5px;
-            font-size: 0.8em; 
+            font-size: 0.8em;
         }
         #fragrance-description {
-            font-size: 0.8em; 
+            font-size: 0.8em;
             line-height: 1.5;
             white-space: pre-line;
-            color: black; 
+            color: black;
         }
 
         #right-panel {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; 
+            justify-content: flex-start;
             text-align: center;
-            padding-top: 0; 
-            height: 100%; 
-            overflow: hidden; 
+            padding-top: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #perfume-image-container { /* New container for image and text */
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            display: flex; /* To center the image within */
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer; /* Indicate it's clickable */
         }
 
         #perfume-image-large {
-            max-width: 100%; 
+            max-width: 100%;
             height: auto;
-            max-height: 100%; 
-            object-fit: contain; 
+            max-height: 100%;
+            object-fit: contain;
             border-radius: 0;
-            box-shadow: none; 
-            margin-bottom: 10px; 
-            display: none; 
+            box-shadow: none;
+            display: none;
         }
+
+        .apply-text { /* New style for the overlay text */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none; /* Make text not interfere with image click */
+        }
+
+        #perfume-image-container:hover .apply-text {
+            opacity: 1;
+        }
+
         #perfume-name-text {
-            font-size: 1.2em; 
+            font-size: 1.2em;
             font-weight: 700;
-            color: black; 
+            color: black;
             min-height: 1.5em;
             text-align: center;
-            margin-top: auto; 
+            margin-top: auto;
         }
-        
+
         .modal {
-            display: none; 
+            display: none;
             position: fixed;
             z-index: 100;
             left: 0;
@@ -243,14 +283,14 @@
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto; 
+            margin: 5% auto;
             padding: 30px;
             border: 1px solid #888;
             width: 90%;
-            max-width: 800px; 
-            border-radius: 0; 
-            box-shadow: none; 
-            text-align: center; 
+            max-width: 800px;
+            border-radius: 0;
+            box-shadow: none;
+            text-align: center;
         }
         .close-button {
             color: #aaa;
@@ -267,8 +307,8 @@
 
         #perfume-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-            gap: 15px; 
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
         .gallery-item {
@@ -296,10 +336,10 @@
                 margin: 0 auto;
             }
             #right-panel {
-                order: -1; 
+                order: -1;
             }
             #perfume-gallery {
-                grid-template-columns: repeat(3, 1fr); 
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -319,21 +359,23 @@
     </section>
 
     <section id="analysis-page" class="page-section">
-        
+
         <div id="analysis-header">
             <h1>Find your scent</h1>
-            <button id="gallery-button" title="향수 갤러리 보기"></button> </div>
-        
+            <button id="gallery-button" title="향수 갤러리 보기"></button>
+        </div>
+
         <div id="status">웹캠을 시작하는 중...</div>
-        
+
         <div id="main-analysis-grid">
-            
+
             <div id="left-panel">
-                
+
                 <div class="content-wrapper">
                     <div id="webcam-container">
                         <video id="webcam-video" autoplay playsinline></video>
                         <canvas id="color-canvas" width="480" height="360"></canvas>
+                        <canvas id="particle-canvas"></canvas> 
                     </div>
                 </div>
 
@@ -346,9 +388,12 @@
                 </div>
 
             </div>
-            
+
             <div id="right-panel">
-                <img id="perfume-image-large" src="" alt="추천 향수 이미지">
+                <div id="perfume-image-container">
+                    <img id="perfume-image-large" src="" alt="추천 향수 이미지">
+                    <span class="apply-text">press to apply !</span> 
+                </div>
                 <div id="perfume-name-text"></div>
             </div>
 
@@ -356,13 +401,13 @@
     </section>
 
     <div id="galleryModal" class="modal">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Type</h2>
-        <div id="perfume-gallery">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Type</h2>
+            <div id="perfume-gallery">
             </div>
 
-      </div>
+        </div>
     </div>
 
 
@@ -370,45 +415,198 @@
         const introPage = document.getElementById('intro-page');
         const analysisPage = document.getElementById('analysis-page');
         const startButton = document.getElementById('start-button');
-        
+
         const video = document.getElementById('webcam-video');
         const canvas = document.getElementById('color-canvas');
-        const ctx = canvas.getContext('2d'); 
-        const statusDiv = document.getElementById('status'); 
-        
+        const ctx = canvas.getContext('2d');
+        const particleCanvas = document.getElementById('particle-canvas'); 
+        const pCtx = particleCanvas.getContext('2d'); 
+        const statusDiv = document.getElementById('status');
+
         const colorDisplay = document.getElementById('extracted-color-display');
         const colorCodeText = document.getElementById('color-code-text');
         const fragranceDescription = document.getElementById('fragrance-description');
         const perfumeImageLarge = document.getElementById('perfume-image-large');
+        const perfumeImageContainer = document.getElementById('perfume-image-container'); 
         const perfumeNameText = document.getElementById('perfume-name-text');
         const leftPanel = document.getElementById('left-panel');
         const rightPanel = document.getElementById('right-panel');
 
 
-        const galleryButton = document.getElementById('gallery-button'); 
-        const modal = document.getElementById('galleryModal'); 
+        const galleryButton = document.getElementById('gallery-button');
+        const modal = document.getElementById('galleryModal');
         const closeButton = modal.querySelector('.close-button');
+
+        // *************** 오디오 재생을 위한 코드 추가 ***************
+        const soundFile = 'puff.mp3';
+        const audioPuff = new Audio(soundFile);
+        audioPuff.load(); 
+        // *******************************************************
 
 
         const perfumeDatabase = {
-            'TF_TUSCAN': { name: 'Tom Ford Tuscan Leather', family: '미스터리 우디 레더', notes: '깊고 은밀함\n[주요 노트: 레더, 샤프란, 인센스]', imageUrl: 'Tom Ford Tuscan Leather.png' },
-            'BY_BLANCHE': { name: 'Byredo Blanche', family: '에어리 코튼 머스크', notes: '순수함, 깨끗함\n[주요 노트: 알데하이드, 코튼, 화이트 머스크]', imageUrl: 'Byredo Blanche.png' },
-            'VR_SPICEBOMB': { name: 'Viktor & Rolf Spicebomb', family: '파이어리 스파이스', notes: '열정적, 강렬함\n[주요 노트: 시나몬, 핑크 페퍼, 베티버]', imageUrl: 'Viktor & Rolf Spicebomb.png' },
-            'ADP_FICO': { name: 'Acqua di Parma Fico di Amalfi', family: '비비드 그린 시트러스', notes: '생동감, 신선한 에너지\n[주요 노트: 레몬, 무화과, 바질]', imageUrl: 'Acqua di Parma Fico di Amalfi.png' },
-            'DV_COOLWATER': { name: 'Davidoff Cool Water', family: '딥 아쿠아 오존', notes: '역동적, 청명함\n[주요 노트: 마린 어코드, 오존, 민트]', imageUrl: 'Davidoff Cool Water.png' },
-            'YSL_OPIUM': { name: 'YSL Black Opium', family: '모던 오리엔탈 구르망', notes: '중독성, 관능적\n[주요 노트: 커피, 바닐라, 화이트 플로럴]', imageUrl: 'YSL Black Opium.png' },
-            'MM_JAZZ': { name: 'Maison Margiela Replica Jazz Club', family: '젠틀 구르망', notes: '포근함, 따뜻한 위로\n[주요 노트: 럼, 바닐라, 담배]', imageUrl: 'Maison Margiela Replica Jazz Club.png' }, 
-            'DIOR_HOMME': { name: 'Dior Homme Intense', family: '아이리스 파우더리', notes: '섬세함, 지적인 우아함\n[주요 노트: 아이리스, 앰버, 시더우드]', imageUrl: 'Dior Homme Intense.png' },
-            'JM_PEONY': { name: 'Jo Malone Peony & Blush Suede', family: '에테리얼 플로럴', notes: '몽환적, 부드러운 화사함\n[주요 노트: 작약, 사과, 스웨이드]', imageUrl: 'Jo Malone Peony & Blush Suede.png' }, 
-            'LL_SANTAL': { name: 'Le Labo Santal 33', family: '클래식 우디', notes: '차분함, 중성적\n[주요 노트: 샌달우드, 가죽, 파피루스]', imageUrl: 'Le Labo Santal 33.png' },
-            'MM_FIREPLACE': { name: 'Maison Margiela Replica By the Fireplace', family: '타바코 헤이', notes: '빈티지함, 고독\n[주요 노트: 클로브, 바닐라, 밤나무]', imageUrl: 'Maison Margiela Replica By the Fireplace.png' },
-            'H_TERRE': { name: 'Hermès Terre d\'Hermès', family: '흙 내음 베티버', notes: '안정감, 뿌리 깊음\n[주요 노트: 오렌지, 베티버, 시더]', imageUrl: 'Hermès Terre d\'Hermès.png' },
-            'D_SAUVAGE': { name: 'Dior Sauvage', family: '클래식 포제어', notes: '세련됨, 전문적\n[주요 노트: 베르가못, 앰브록산, 라벤더]', imageUrl: 'Dior Sauvage.png' },
-            'DEFAULT_MUSK': { name: 'Clean Reserve Warm Cotton', family: '퓨어 솝', notes: '차분함, 중성적\n[주요 노트: 알데하이드, 자스민, 머스크]', imageUrl: 'Clean Reserve Warm Cotton.png' },
+            'TF_TUSCAN': { name: 'Tom Ford Tuscan Leather', family: '미스터리 우디 레더', notes: '깊고 은밀함\n[주요 노트: 레더, 샤프란, 인센스]', imageUrl: 'Tom Ford Tuscan Leather.png', particle: { color: 'rgba(100, 50, 50, 0.7)', size: 3, speed: 0.3, count: 50, shape: 'square' } },
+            'BY_BLANCHE': { name: 'Byredo Blanche', family: '에어리 코튼 머스크', notes: '순수함, 깨끗함\n[주요 노트: 알데하이드, 코튼, 화이트 머스크]', imageUrl: 'Byredo Blanche.png', particle: { color: 'rgba(255, 255, 255, 0.9)', size: 4, speed: 0.5, count: 70, shape: 'circle' } },
+            'VR_SPICEBOMB': { name: 'Viktor & Rolf Spicebomb', family: '파이어리 스파이스', notes: '열정적, 강렬함\n[주요 노트: 시나몬, 핑크 페퍼, 베티버]', imageUrl: 'Viktor & Rolf Spicebomb.png', particle: { color: 'rgba(255, 100, 0, 0.8)', size: 3.5, speed: 0.4, count: 60, shape: 'star' } },
+            'ADP_FICO': { name: 'Acqua di Parma Fico di Amalfi', family: '비비드 그린 시트러스', notes: '생동감, 신선한 에너지\n[주요 노트: 레몬, 무화과, 바질]', imageUrl: 'Acqua di Parma Fico di Amalfi.png', particle: { color: 'rgba(100, 200, 50, 0.8)', size: 3, speed: 0.5, count: 55, shape: 'leaf' } },
+            'DV_COOLWATER': { name: 'Davidoff Cool Water', family: '딥 아쿠아 오존', notes: '역동적, 청명함\n[주요 노트: 마린 어코드, 오존, 민트]', imageUrl: 'Davidoff Cool Water.png', particle: { color: 'rgba(50, 150, 255, 0.8)', size: 3.5, speed: 0.6, count: 65, shape: 'circle' } },
+            'YSL_OPIUM': { name: 'YSL Black Opium', family: '모던 오리엔탈 구르망', notes: '중독성, 관능적\n[주요 노트: 커피, 바닐라, 화이트 플로럴]', imageUrl: 'YSL Black Opium.png', particle: { color: 'rgba(50, 0, 50, 0.7)', size: 4, speed: 0.4, count: 50, shape: 'star' } },
+            'MM_JAZZ': { name: 'Maison Margiela Replica Jazz Club', family: '젠틀 구르망', notes: '포근함, 따뜻한 위로\n[주요 노트: 럼, 바닐라, 담배]', imageUrl: 'Maison Margiela Replica Jazz Club.png', particle: { color: 'rgba(150, 100, 50, 0.7)', size: 3.2, speed: 0.3, count: 55, shape: 'square' } },
+            'DIOR_HOMME': { name: 'Dior Homme Intense', family: '아이리스 파우더리', notes: '섬세함, 지적인 우아함\n[주요 노트: 아이리스, 앰버, 시더우드]', imageUrl: 'Dior Homme Intense.png', particle: { color: 'rgba(150, 100, 150, 0.8)', size: 3, speed: 0.5, count: 60, shape: 'circle' } },
+            'JM_PEONY': { name: 'Jo Malone Peony & Blush Suede', family: '에테리얼 플로럴', notes: '몽환적, 부드러운 화사함\n[주요 노트: 작약, 사과, 스웨이드]', imageUrl: 'Jo Malone Peony & Blush Suede.png', particle: { color: 'rgba(255, 180, 200, 0.8)', size: 3.5, speed: 0.4, count: 65, shape: 'heart' } },
+            'LL_SANTAL': { name: 'Le Labo Santal 33', family: '클래식 우디', notes: '차분함, 중성적\n[주요 노트: 샌달우드, 가죽, 파피루스]', imageUrl: 'Le Labo Santal 33.png', particle: { color: 'rgba(120, 90, 60, 0.7)', size: 3.3, speed: 0.3, count: 55, shape: 'square' } },
+            'MM_FIREPLACE': { name: 'Maison Margiela Replica By the Fireplace', family: '타바코 헤이', notes: '빈티지함, 고독\n[주요 노트: 클로브, 바닐라, 밤나무]', imageUrl: 'Maison Margiela Replica By the Fireplace.png', particle: { color: 'rgba(80, 40, 20, 0.7)', size: 3.8, speed: 0.3, count: 50, shape: 'square' } },
+            'H_TERRE': { name: 'Hermès Terre d\'Hermès', family: '흙 내음 베티버', notes: '안정감, 뿌리 깊음\n[주요 노트: 오렌지, 베티버, 시더]', imageUrl: 'Hermès Terre d\'Hermès.png', particle: { color: 'rgba(130, 90, 30, 0.7)', size: 3.1, speed: 0.4, count: 58, shape: 'leaf' } },
+            'D_SAUVAGE': { name: 'Dior Sauvage', family: '클래식 포제어', notes: '세련됨, 전문적\n[주요 노트: 베르가못, 앰브록산, 라벤더]', imageUrl: 'Dior Sauvage.png', particle: { color: 'rgba(70, 100, 150, 0.8)', size: 3.4, speed: 0.5, count: 62, shape: 'circle' } },
+            'DEFAULT_MUSK': { name: 'Clean Reserve Warm Cotton', family: '퓨어 솝', notes: '차분함, 중성적\n[주요 노트: 알데하이드, 자스민, 머스크]', imageUrl: 'Clean Reserve Warm Cotton.png', particle: { color: 'rgba(200, 200, 200, 0.8)', size: 3, speed: 0.4, count: 60, shape: 'circle' } },
         };
 
         let currentPerfumeKey = '';
-        let r, g, b; 
+        let r, g, b;
+
+        // Particle System variables
+        let particles = [];
+        let particleAnimationFrameId = null;
+
+        class Particle {
+            constructor(x, y, config) {
+                this.x = x;
+                this.y = y;
+                // 랜덤하고 느린 초기 속도
+                this.vx = (Math.random() - 0.5) * config.speed; 
+                this.vy = (Math.random() - 0.5) * config.speed; 
+                this.size = config.size + (Math.random() * config.size * 0.5 - config.size * 0.25); 
+                this.color = config.color;
+                this.lifetime = 0;
+                // 수명을 매우 크게 설정하여 사라지지 않도록 함
+                this.maxLifetime = 9999999; 
+                this.shape = config.shape;
+                this.angularVelocity = (Math.random() - 0.5) * 0.02; // 회전 속도 (선택 사항)
+            }
+
+            update() {
+                // 느리게 떠다니는 효과: 현재 속도에 작은 랜덤 값을 더하고 마찰을 적용
+                this.vx += (Math.random() - 0.5) * 0.02; // 느린 무작위 움직임
+                this.vy += (Math.random() - 0.5) * 0.02;
+
+                // 속도 제한 및 마찰
+                const friction = 0.99;
+                const maxSpeed = 0.8;
+                this.vx *= friction;
+                this.vy *= friction;
+
+                if (Math.abs(this.vx) > maxSpeed) this.vx = maxSpeed * Math.sign(this.vx);
+                if (Math.abs(this.vy) > maxSpeed) this.vy = maxSpeed * Math.sign(this.vy);
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                this.lifetime++;
+
+                // 파티클이 캔버스 밖으로 나가지 않도록 경계 조건 추가
+                if (this.x < 0 || this.x > particleCanvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > particleCanvas.height) this.vy *= -1;
+
+                this.x = Math.max(0, Math.min(particleCanvas.width, this.x));
+                this.y = Math.max(0, Math.min(particleCanvas.height, this.y));
+            }
+
+            draw(ctx) {
+                ctx.save();
+                // 수명을 무한대로 설정했기 때문에 알파값은 고정
+                ctx.globalAlpha = parseFloat(this.color.slice(this.color.lastIndexOf(',') + 1, this.color.lastIndexOf(')')));
+                ctx.fillStyle = this.color;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.lifetime * this.angularVelocity); // 회전 애니메이션
+
+                ctx.beginPath();
+                if (this.shape === 'circle') {
+                    ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                } else if (this.shape === 'square') {
+                    ctx.rect(-this.size / 2, -this.size / 2, this.size, this.size);
+                } else if (this.shape === 'star') {
+                    drawStar(ctx, 0, 0, this.size * 1.5, 5, 0.5);
+                } else if (this.shape === 'leaf') {
+                    drawLeaf(ctx, 0, 0, this.size * 2);
+                } else if (this.shape === 'heart') {
+                    drawHeart(ctx, 0, 0, this.size * 1.5);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Custom shapes
+        function drawStar(ctx, cx, cy, R, N, inset) {
+            
+            ctx.moveTo(cx, cy - R);
+            for (var i = 0; i < N; i++) {
+                ctx.rotate(Math.PI / N);
+                ctx.lineTo(cx, cy - (R * inset));
+                ctx.rotate(Math.PI / N);
+                ctx.lineTo(cx, cy - R);
+            }
+            
+        }
+
+        function drawLeaf(ctx, x, y, size) {
+            
+            ctx.scale(size / 20, size / 20); 
+
+            ctx.moveTo(0,0);
+            ctx.bezierCurveTo(5,-5, 10,-10, 20,-5);
+            ctx.bezierCurveTo(15,0, 10,5, 0,0);
+            
+        }
+
+        function drawHeart(ctx, x, y, size) {
+            
+            ctx.beginPath();
+            ctx.moveTo(0, size * 0.5);
+            ctx.bezierCurveTo(size * 0.5, size * 0.2, size * 0.5, -size * 0.4, 0, -size * 0.5);
+            ctx.bezierCurveTo(-size * 0.5, -size * 0.4, -size * 0.5, size * 0.2, 0, size * 0.5);
+            ctx.closePath();
+            
+        }
+
+
+        function animateParticles() {
+            pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.update();
+                p.draw(pCtx);
+
+                // 파티클을 제거하는 코드를 삭제하여 영구적으로 존재하도록 함
+                // if (p.lifetime >= p.maxLifetime) {
+                //     particles.splice(i, 1);
+                // }
+            }
+
+            // 파티클이 영구적으로 존재하므로, 한번 시작하면 계속 실행
+            particleAnimationFrameId = requestAnimationFrame(animateParticles);
+        }
+
+        function createParticles(config) {
+            // 기존 파티클이 있다면 캔슬하지 않고, 새로운 파티클을 추가
+            
+            const numNewParticles = config.count;
+
+            for (let i = 0; i < numNewParticles; i++) {
+                // 웹캠 영역 내에서 랜덤 X, Y 위치 생성
+                const randomX = Math.random() * particleCanvas.width;
+                const randomY = Math.random() * particleCanvas.height;
+
+                particles.push(new Particle(randomX, randomY, config));
+            }
+            
+            // 애니메이션 루프가 실행 중이 아니라면 시작
+            if (particleAnimationFrameId === null) {
+                particleAnimationFrameId = requestAnimationFrame(animateParticles);
+            }
+        }
 
         function rgbToHex(r, g, b) {
             const componentToHex = (c) => {
@@ -420,16 +618,16 @@
 
         function updatePerfume(key) {
             const perfume = perfumeDatabase[key];
-            if (!perfume) return; 
+            if (!perfume) return;
 
             currentPerfumeKey = key;
             const hexColor = rgbToHex(r, g, b);
-            
+
             colorCodeText.textContent = `extracted color : ${hexColor}`;
             colorDisplay.style.backgroundColor = hexColor;
 
             const fragranceText = `추천 계열: ${perfume.family}\n[주요 노트: ${perfume.notes.split('\n')[1].replace('[주요 노트: ', '').replace(']', '')}]`;
-            fragranceDescription.textContent = fragranceText; 
+            fragranceDescription.textContent = fragranceText;
 
             if (perfume.imageUrl) {
                 perfumeImageLarge.src = perfume.imageUrl;
@@ -445,18 +643,19 @@
                 }
 
             } else {
-                perfumeImageLarge.style.display = 'none'; 
+                perfumeImageLarge.style.display = 'none';
             }
             perfumeNameText.textContent = perfume.name;
         }
 
         function adjustPerfumeImageHeight() {
             const leftPanelHeight = leftPanel.offsetHeight;
-            
-            const nameTextHeight = perfumeNameText.offsetHeight + 10; 
-            const availableHeight = leftPanelHeight - nameTextHeight; 
 
-            perfumeImageLarge.style.maxHeight = `${Math.max(200, availableHeight)}px`; 
+            const nameTextHeight = perfumeNameText.offsetHeight + 10;
+            const availableHeight = leftPanelHeight - nameTextHeight;
+
+            perfumeImageContainer.style.maxHeight = `${Math.max(200, availableHeight)}px`; 
+            perfumeImageLarge.style.maxHeight = `${Math.max(200, availableHeight)}px`;
         }
 
         function startWebcamAnalysis() {
@@ -464,12 +663,16 @@
                 navigator.mediaDevices.getUserMedia({ video: true })
                     .then(function(stream) {
                         video.srcObject = stream;
-                        video.oncanplay = () => { 
+                        video.oncanplay = () => {
                             video.play();
+                            
+                            particleCanvas.width = video.videoWidth;
+                            particleCanvas.height = video.videoHeight;
+
                             statusDiv.textContent = '웹캠 연결 성공. 분석을 시작합니다.';
                             setTimeout(() => {
                                 requestAnimationFrame(processVideoFrame);
-                            }, 100); 
+                            }, 100);
                         };
                     })
                     .catch(function(err) {
@@ -484,11 +687,11 @@
 
         function handleStart() {
             introPage.style.display = 'none';
-            analysisPage.style.display = 'flex'; 
+            analysisPage.style.display = 'flex';
             startWebcamAnalysis();
-            setTimeout(adjustPerfumeImageHeight, 200); 
+            setTimeout(adjustPerfumeImageHeight, 200);
         }
-        
+
         startButton.addEventListener('click', handleStart);
 
         function processVideoFrame() {
@@ -512,34 +715,34 @@
                 total_b += data[i + 2];
                 pixelCount++;
             }
-            
+
             r = Math.floor(total_r / pixelCount);
             g = Math.floor(total_g / pixelCount);
             b = Math.floor(total_b / pixelCount);
 
             applyFragrance(r, g, b);
-            requestAnimationFrame(processVideoFrame); 
+            requestAnimationFrame(processVideoFrame);
         }
 
         function applyFragrance(r, g, b) {
-            
-            let recommendedKey = 'DEFAULT_MUSK'; 
+
+            let recommendedKey = 'DEFAULT_MUSK';
 
             let colorIntensity = (r + g + b) / 3;
             let maxVal = Math.max(r, g, b);
             let minVal = Math.min(r, g, b);
             let saturation = maxVal === 0 ? 0 : (maxVal - minVal) / maxVal * 255;
-            
+
             let avg = colorIntensity;
             let r_diff = r - avg;
             let g_diff = g - avg;
             let b_diff = b - avg;
 
-            if (colorIntensity < 70) { 
+            if (colorIntensity < 70) {
                 recommendedKey = 'TF_TUSCAN';
-            } else if (colorIntensity > 220 && saturation < 50) { 
+            } else if (colorIntensity > 220 && saturation < 50) {
                 recommendedKey = 'BY_BLANCHE';
-            } else if (saturation > 180) { 
+            } else if (saturation > 180) {
                 if (r_diff > 30) {
                     recommendedKey = 'VR_SPICEBOMB';
                 } else if (g_diff > 30) {
@@ -550,16 +753,16 @@
                     recommendedKey = 'YSL_OPIUM';
                 }
             } else if (colorIntensity > 150) {
-                if (r_diff > 10 && g_diff > 10) { 
+                if (r_diff > 10 && g_diff > 10) {
                     recommendedKey = 'MM_JAZZ';
-                } else if (b_diff > 10) { 
+                } else if (b_diff > 10) {
                     recommendedKey = 'DIOR_HOMME';
-                } else if (g_diff > 10) { 
+                } else if (g_diff > 10) {
                     recommendedKey = 'JM_PEONY';
                 } else {
                     recommendedKey = 'LL_SANTAL';
                 }
-            } else { 
+            } else {
                 if (r_diff > 5 && r_diff > b_diff) {
                     recommendedKey = 'MM_FIREPLACE';
                 } else if (g_diff > 5 && g_diff > r_diff) {
@@ -568,31 +771,31 @@
                     recommendedKey = 'D_SAUVAGE';
                 }
             }
-            
+
             updatePerfume(recommendedKey);
         }
 
         function createGalleryContent() {
             const galleryDiv = document.getElementById('perfume-gallery');
-            galleryDiv.innerHTML = ''; 
+            galleryDiv.innerHTML = '';
 
             for (const key in perfumeDatabase) {
                 const perfume = perfumeDatabase[key];
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'gallery-item';
-                
+
                 const img = document.createElement('img');
                 img.src = perfume.imageUrl;
                 img.onerror = function() {
-                    this.onerror = null; 
+                    this.onerror = null;
                     this.src = this.src.replace('.png', '.jpg');
                 };
 
                 img.alt = perfume.name;
-                
+
                 const nameText = document.createElement('div');
                 nameText.textContent = perfume.name;
-                
+
                 itemDiv.appendChild(img);
                 itemDiv.appendChild(nameText);
                 galleryDiv.appendChild(itemDiv);
@@ -601,7 +804,7 @@
 
 
         galleryButton.onclick = function() {
-          createGalleryContent(); 
+          createGalleryContent();
           modal.style.display = "block";
         }
         closeButton.onclick = function() {
@@ -612,6 +815,20 @@
             modal.style.display = "none";
           }
         }
+
+        // Event listener for perfume image click to trigger particles and sound
+        perfumeImageContainer.addEventListener('click', () => {
+            const currentPerfume = perfumeDatabase[currentPerfumeKey];
+            if (currentPerfume && currentPerfume.particle) {
+                // 파티클 생성
+                createParticles(currentPerfume.particle);
+                
+                // 소리 재생
+                audioPuff.currentTime = 0; // 소리가 재생 중이라도 처음부터 다시 재생
+                audioPuff.play().catch(e => console.log("Audio play failed:", e)); // 재생 에러 방지 (대부분의 브라우저는 사용자 상호작용 없이 자동 재생을 막습니다)
+            }
+        });
+
 
         window.addEventListener('resize', adjustPerfumeImageHeight);
     </script>
