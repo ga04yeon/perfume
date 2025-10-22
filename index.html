@@ -626,7 +626,7 @@
             colorCodeText.textContent = `extracted color : ${hexColor}`;
             colorDisplay.style.backgroundColor = hexColor;
 
-            const fragranceText = `추천 계열: ${perfume.family}\n[주요 노트: ${perfume.notes.split('\n')[1].replace('[주요 노트: ', '').replace(']', '')}]`;
+            const fragranceText = `추천 계열: ${perfume.family}\n${perfume.notes.split('\n')[1]}`;
             fragranceDescription.textContent = fragranceText;
 
             if (perfume.imageUrl) {
@@ -772,7 +772,21 @@
                 }
             }
 
-            updatePerfume(recommendedKey);
+            // 이전에 추천된 향수와 다를 경우에만 파티클 초기화 및 업데이트를 수행
+            if (currentPerfumeKey !== recommendedKey) {
+                // 파티클 초기화 (이전 파티클 제거)
+                particles = [];
+                // 새로운 향수 정보로 업데이트
+                updatePerfume(recommendedKey);
+                // 새로운 파티클 생성
+                const newPerfume = perfumeDatabase[recommendedKey];
+                if (newPerfume && newPerfume.particle) {
+                    createParticles(newPerfume.particle);
+                }
+            } else {
+                 // 같은 향수라도 컬러 코드와 텍스트는 지속적으로 업데이트
+                updatePerfume(recommendedKey);
+            }
         }
 
         function createGalleryContent() {
@@ -821,8 +835,9 @@
             const currentPerfume = perfumeDatabase[currentPerfumeKey];
             if (currentPerfume && currentPerfume.particle) {
                 // 파티클 생성
-                createParticles(currentPerfume.particle);
-                
+                // 이미 화면에 파티클이 있다면 중복 생성 방지 또는 새 파티클 추가 로직은 createParticles에서 처리
+                // createParticles(currentPerfume.particle); // applyFragrance에서 이미 생성되므로 주석 처리
+
                 // 소리 재생
                 audioPuff.currentTime = 0; // 소리가 재생 중이라도 처음부터 다시 재생
                 audioPuff.play().catch(e => console.log("Audio play failed:", e)); // 재생 에러 방지 (대부분의 브라우저는 사용자 상호작용 없이 자동 재생을 막습니다)
